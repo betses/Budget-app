@@ -9,7 +9,7 @@ class GroupController < ApplicationController
 
     def show
         @group = Group.find(params[:id])
-        @entities = @group.expenses.order('created_at DESC')
+        @entities = @group.entities.order('created_at DESC')
     end
 
     def create
