@@ -1,5 +1,5 @@
 <div class="h-screen bg-[#f1f3f2]">
-  <%= form_with url: group_entity_index_path, scope: :entity do |form| %>
+  <%= form_with url: group_entity_index_path, scope: :entities do |form| %>
     <div class="flex justify-between items-center bg-[#3671b9] w-full text-white px-3 py-3">
     <%= link_to '<-', root_path, class: "text-2xl"  %>
         <h2 class="uppercase">Add Expenses</h2>
@@ -9,7 +9,9 @@
           <%= form.text_field :name, :required => true, placeholder: "Name", class: " w-full p-5 bg-white text-[#b6b7ba] border border-gray-200 placeholder:text-[#b6b7ba]  focus:border-gray-200 focus:ring-0" %>
 
       <%= form.number_field :amount, :required => true, placeholder: "Amount", class: "w-full p-5 bg-white text-[#b6b7ba] border border-gray-200 placeholder:text-[#b6b7ba]  focus:border-gray-200 focus:ring-0" %>
-      <%# <%= form.collection_select :group_ids, current_user.groups.order(:name), :id, :name, {}, { class: "form-select  m-2", multiple: true, required: true } %> %>
+      
+      
+      <%= form.collection_select :group_ids, Group.all, :id, :name, {}, { class: "w-full", multiple: true, required: true } %>
     </div>
 
   <% end %>
