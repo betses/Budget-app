@@ -13,22 +13,26 @@
             <li>Monst ancient</li>
         </ul>
     </div>
-    <%= link_to do %>
-    <div class="flex p-6 rounded-lg shadow-lg bg-white my-5 mx-3">
-         <img src="https://www.w3schools.com/howto/img_avatar.png" alt="catagory" class="h-14 w-14 rounded-full"> 
-         <div class="w-full px-3">
-            <div class="flex justify-between border-b border-[#f1f3f2] pb-2 mb-2">
-                <h2>Food</h2>
-                <h2>$17.00</h2>
+    <% @groups.each do |group| %>
+        <%= link_to group_entity_index_path(group.id) do %>
+            <div class="flex p-6 rounded-lg shadow-lg bg-white my-5 mx-3">
+                <%= image_tag group.icon, alt: "#{group.name}-avatar", class: "h-14 w-14 rounded-full" %>
+                <div class="w-full px-3">
+                    <div class="flex justify-between border-b border-[#f1f3f2] pb-2 mb-2">
+                        <h2><%= group.name %></h2>
+                        <h2>$17.00</h2>
+                    </div>
+                    <h3 class="text-xs text-[#b2b2b4]"><%= group.created_at.strftime('%d %B %Y') %></h3>
+                </div>
             </div>
-            <h3 class="text-xs text-[#b2b2b4]">12 Apr 2014</h3>
-         </div>
-    </div>
+        <% end %>
     <% end %>
-    <div class="p-2 w-10 bg-blue-800 text-white shadow rounded-full sticky top-full left-full mb-8 mr-5">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-        </svg>
-    </div>
+    <%= link_to new_group_path do %>
+        <div class="p-2 w-10 bg-blue-800 text-white shadow rounded-full sticky top-full left-full mb-8 mr-5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            </svg>
+        </div>
+    <% end %>
 
 </div>
