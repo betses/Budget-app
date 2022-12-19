@@ -3,7 +3,6 @@ class Group < ApplicationRecord
   has_and_belongs_to_many :entities, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 255 }
-  has_one_attached :image
 
   def total_amount
     entities.sum('amount')

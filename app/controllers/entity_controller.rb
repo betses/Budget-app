@@ -23,7 +23,7 @@ class EntityController < ApplicationController
   end
    
   def destroy
-    @expense = Expense.find(params[:id])
+    @expense = Entity.find(params[:id])
     @expense.destroy
     flash[:success] = 'Expense was successfully deleted.'
     redirect_to root_path

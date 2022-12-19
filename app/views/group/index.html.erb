@@ -9,7 +9,7 @@
     <div class="bg-[#3671b9]">
         <ul class="flex justify-between p-5 text-white">
             <li></li>
-            <li>Most recent</li>
+            <li><a href="#" onclick="this.style.backgroundColor='#990000'">Paint it red</a></li>
             <li>Monst ancient</li>
         </ul>
     </div>
@@ -33,7 +33,7 @@
                     <h3 class="text-xs text-[#b2b2b4]"><%= group.created_at.strftime('%d %B %Y') %></h3>
                     <% end %>
                     <%if can? :destroy, group %>
-                        <%= button_to "🗑️", group_path(group), method: :delete, class:" bg-red-400 hover:bg-white border-2 rounded-full border-indigo-500/100" %>
+                        <%= button_to "🗑️", group_path(group.id), method: :delete, class:" bg-red-400 hover:bg-white border-2 rounded-full border-indigo-500/100" %>
                     <%end%>
                     </div>
                 </div>
