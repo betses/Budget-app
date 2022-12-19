@@ -21,7 +21,7 @@ class EntityController < ApplicationController
       end
     end
   end
-   
+
   def destroy
     @expense = Entity.find(params[:id])
     @expense.destroy
@@ -32,6 +32,4 @@ class EntityController < ApplicationController
   def expense_params
     params.require(:entities).permit(:name, :amount, group_ids: [])
   end
-
 end
-
