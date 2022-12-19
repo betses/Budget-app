@@ -4,11 +4,16 @@
         <h2><%= @group.name %> Expenses</h2>
         <%= button_to "Sign out", destroy_user_session_path, method: :delete,  data: {turbo: false}, class: "rounded text-white hover:bg-indigo-500 text-sm uppercase", 'data-ripple-light': true %>
     </div>
+    <% sum = 0 %>
+    <% count = 0 %>
+    <% @entities.each do |entities| %>
+        <% sum += entities.amount %>
+        <% count += 1%>
+    <%end%>
     <div class="bg-[#3671b9]">
-        <ul class="flex justify-between p-5 text-white">
-            <li></li>
-            <li>Most recent</li>
-            <li>Monst ancient</li>
+        <ul class="p-5 text-white">
+            <li>Total Expense count: <%= count %></li>
+            <li>Total Expense spent: $<%= sum %></li>
         </ul>
     </div>
     <% @entities.each do |entities| %>
@@ -16,7 +21,7 @@
                 <div class="w-full px-3">
                     <div class="flex justify-between border-b border-[#f1f3f2] pb-2 mb-2">
                         <h2><%= entities.name %></h2>
-                        <h2>$ <%= entities.id %> </h2>
+                        <h2>$ <%= entities.amount %> </h2>
                     </div>
                     <div class="flex justify-between">
                         <h3 class="text-xs text-[#b2b2b4]"><%= entities.created_at.strftime('%d %B %Y') %></h3>
