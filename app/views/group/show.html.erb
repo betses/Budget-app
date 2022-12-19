@@ -1,7 +1,7 @@
 <div class="h-screen bg-[#f1f3f2]">
     <div class="flex justify-between items-center bg-[#3671b9] w-full text-white px-3 py-3">
         <%= link_to '<-', root_path, class: "text-2xl"  %>
-        <h2><%= @group.name %> Expenses</h2>
+        <h2 class="uppercase"><%= @group.name %></h2>
         <%= button_to "Sign out", destroy_user_session_path, method: :delete,  data: {turbo: false}, class: "rounded text-white hover:bg-indigo-500 text-sm uppercase", 'data-ripple-light': true %>
     </div>
     <% sum = 0 %>
