@@ -11,7 +11,7 @@
       <%= form.number_field :amount, :required => true, placeholder: "Amount", class: "w-full p-5 bg-white text-[#b6b7ba] border border-gray-200 placeholder:text-[#b6b7ba]  focus:border-gray-200 focus:ring-0" %>
       
       
-      <%= form.collection_select :group_ids, Group.all, :id, :name, {}, { class: "w-full", multiple: true, required: true } %>
+      <%= form.collection_select :group_ids, current_user.groups.order(:name), :id, :name, {}, { class: "w-full", multiple: true, required: true } %>
     </div>
 
   <% end %>

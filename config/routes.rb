@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     root 'group#index', as: :authenticated_root
   end
   
-  resources :group, only: %i[index show new create] do
-    resources :entity, only: %i[index new create]
+  resources :group, only: %i[index show new create destroy] do
+    resources :entity, only: %i[index new create destroy]
   end
 end

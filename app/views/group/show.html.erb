@@ -18,9 +18,14 @@
                         <h2><%= entities.name %></h2>
                         <h2>$ <%= entities.amount %></h2>
                     </div>
-                    <h3 class="text-xs text-[#b2b2b4]"><%= entities.created_at.strftime('%d %B %Y') %></h3>
+                    <div class="flex justify-between">
+                        <h3 class="text-xs text-[#b2b2b4]"><%= entities.created_at.strftime('%d %B %Y') %></h3>
+                        <%= button_to "🗑️",  group_entity_path(entities), method: :delete, class:" bg-red-400 hover:bg-white border-2 rounded-full border-indigo-500/100" %>
+                    </div>
                 </div>
             </div>
+
+
     <% end %>
     <%= link_to new_group_entity_path(@group.id) do %>
         <div class="p-2 w-10 bg-blue-800 text-white shadow rounded-full sticky top-full left-full mb-8 mr-5">

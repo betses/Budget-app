@@ -1,6 +1,7 @@
 class GroupController < ApplicationController
+  load_and_authorize_resource
     def index
-        @groups = Group.order(:name)
+        @groups = current_user.groups.order(:name)
         end
 
     def new
@@ -29,7 +30,7 @@ class GroupController < ApplicationController
         @group = Group.find(params[:id])
         @group.destroy
         respond_to do |format|
-          format.html { redirect_to groups_url, notice: 'Category was successfully destroyed!.' }
+          format.html { redirect_to root_path, notice: 'Category was successfully destroyed!.' }
         end
       end
 
