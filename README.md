@@ -54,7 +54,7 @@
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo 
-<a name="live-demo" href="https://budgetapp-mm88.onrender.com/">Click here ⌛</a>
+<a name="live-demo" href="https://budgetapp-mm88.onrender.com/">Click here </a>
  
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -182,6 +182,7 @@ If you like this project make sure to give it a star 🌟
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 - [Microverse](https://www.microverse.org/)
+- [Gregoire Vella on Behance ](https://www.microverse.org/) the [author of the original design ](https://www.microverse.org/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
