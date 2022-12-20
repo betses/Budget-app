@@ -1,0 +1,48 @@
+<div class="h-screen bg-[#f1f3f2]">
+    <div class="flex justify-between items-center bg-gradient-to-r from-[#2c609c] to-[#3576c3] w-full text-white p-5">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+        <h2>Catagories</h2>
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete,  data: {turbo: false}, class: " px-2 py-1 rounded text-white hover:bg-red-500 text-sm uppercase", 'data-ripple-light': true %>
+    </div>
+
+    <% if notice.present? %>
+        <div class="flex items-center bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md" role="alert">
+        <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.432 0c1.34 0 2.01.912 2.01 1.957 0 1.305-1.164 2.512-2.679 2.512-1.269 0-2.009-.75-1.974-1.99C9.789 1.436 10.67 0 12.432 0zM8.309 20c-1.058 0-1.833-.652-1.093-3.524l1.214-5.092c.211-.814.246-1.141 0-1.141-.317 0-1.689.562-2.502 1.117l-.528-.88c2.572-2.186 5.531-3.467 6.801-3.467 1.057 0 1.233 1.273.705 3.23l-1.391 5.352c-.246.945-.141 1.271.106 1.271.317 0 1.357-.392 2.379-1.207l.6.814C12.098 19.02 9.365 20 8.309 20z"/></svg>
+        <p><%= notice %></p>
+        </div>
+    <%end %>
+    <% sum = 0 %>
+    <% @groups.each do |group| %>
+        <% group.entities.each do |entities| %>
+            <% sum += entities.amount %>
+        <% end %>
+        <%= link_to group_path(group.id) do %>
+            <div class="flex p-6 rounded-lg shadow-lg bg-white my-5 mx-3">
+                <%= image_tag group.icon, alt: "#{group.name}-avatar", class: "h-14 w-20 rounded-full" %>
+                <div class="w-full px-3">
+                    <div class="flex justify-between border-b border-[#f1f3f2] pb-2 mb-2">
+                        <h2><%= group.name %></h2>
+                        <h2>$<%= sum %></h2>
+                    </div>    
+                    
+                    <div class="flex justify-between">
+                    <h3 class="text-xs text-[#b2b2b4]"><%= group.created_at.strftime('%d %B %Y') %></h3>
+                    <% end %>
+                    <%if can? :destroy, group %>
+                        <%= button_to "🗑️", group_path(group.id), method: :delete, class:" bg-red-400 hover:bg-white border-2 rounded-full border-indigo-500/100" %>
+                    <%end%>
+                    </div>
+                </div>
+            </div>
+    <% end %>
+    <%= link_to new_group_path do %>
+        <div class="p-2 w-10 bg-blue-800 text-white shadow rounded-full sticky top-full left-full mb-8 mr-5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            </svg>
+        </div>
+    <% end %>
+
+</div>
