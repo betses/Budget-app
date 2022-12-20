@@ -1,0 +1,17 @@
+<div class="h-screen bg-[#f1f3f2]">
+  <%= form_with url: group_index_path, scope: :group do |form| %>
+    <div class="flex justify-between items-center bg-gradient-to-r from-[#2c609c] to-[#3576c3] w-full text-white px-3 py-3">
+    <%= link_to '<-', root_path, class: "text-2xl"  %>
+        <h2 class="uppercase">Add groups</h2>
+        <%= form.submit "ADD", class: "cursor-pointer" %>
+    </div>
+    <div>
+      <div class="flex bg-white p-5">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvfMHm_ORYugsd1n-EIlmGc9b8n_dIKwf-PWaqhUEXcd99p50sGjHezhyTZekswkvqOUo&usqp=CAU" alt="catagory" class="h-14 w-14 rounded-full"> 
+          <%= form.text_field :icon, :required => true, placeholder: "Upload picture url", class: " w-full bg-white text-[#b6b7ba] placeholder:text-[#b6b7ba] border-0  focus:ring-0" %>
+      </div>
+      <%= form.text_field :name, :required => true, placeholder: "Name", class: "w-full p-5 bg-white text-[#b6b7ba] border border-gray-200 placeholder:text-[#b6b7ba]  focus:border-gray-200 focus:ring-0" %>
+    </div>
+
+  <% end %>
+</div>

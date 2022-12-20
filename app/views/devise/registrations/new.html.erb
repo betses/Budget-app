@@ -1,0 +1,20 @@
+<div class="h-screen bg-[#f5f6f8] w-full">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <div class="flex justify-between items-center bg-[#3671b9] w-full text-white px-3 py-3">
+    <%= link_to '<-', root_path, class: "text-2xl"  %>
+    <h2 class="uppercase">Register</h2>
+    <%= f.submit "Next", class: "cursor-pointer" %>
+  </div>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= f.text_field :name, autofocus: true, placeholder: "Full name", class: "w-full border border-gray-300 py-3 outline-none focus:ring-indigo-600 :ring-indigo-600" %>
+
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "@email", class: "w-full border border-gray-300 py-3 outline-none focus:ring-indigo-600 :ring-indigo-600" %>
+
+  <div class="field">
+
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "New Password",  class: "w-full border border-gray-300 py-3 outline-none focus:ring-indigo-600 :ring-indigo-600" %>
+  </div>
+  <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password",  class: "w-full border border-gray-300 py-3 outline-none focus:ring-indigo-600 :ring-indigo-600" %>
+
+<% end %>
+</div>
