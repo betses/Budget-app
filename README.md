@@ -53,9 +53,9 @@
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- Comming soon ⌛
+## 🚀 Live Demo 
+<a name="live-demo" href="https://budgetapp-mm88.onrender.com/">Click here ⌛</a>
+ 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
