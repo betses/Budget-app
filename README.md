@@ -147,7 +147,7 @@ Example:
 
 - GitHub: [@betses](https://github.com/betses)
 - LinkedIn: [Betsegaw Sebsibe](https://www.linkedin.com/in/betsegaw-sebsibe/)
-- Twitter: [@betses](https://www.twitter.com/betses/)
+- Twitter:  [Betsegaw Sebsibe](https://twitter.com/Betse_s)
 
 
 ## 🔭 Future Features <a name="future-features"></a>
